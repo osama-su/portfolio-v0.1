@@ -10,28 +10,30 @@
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/all.min.js"></script>
+	<source src="send_mail.php" >
 	
 </head>
 <body>
 	<!--	contact form	 -->
 	<div class="container">
 		<h1 class="text-center">Contact Me</h1>
-		<form class="contact-form">
+		
+		<form class="contact-form" action="send_mail.php" method="POST">
   <div class="form-floating mb-3">
-  <input type="text" name="name" class="form-control" id="floatingInput" placeholder="name@example.com">
-  <label for="floatingInput">your name</label>
+  <input type="text" name="name" class="form-control" id="floatingInput" required placeholder="name@example.com">
+  <label for="floatingInput">your name*</label>
 </div>
   <div class="form-floating mb-3">
-  <input type="email" name="email"class="form-control" id="floatingInput" placeholder="name@example.com">
+  <input type="email" name="email"class="form-control" id="floatingInput" required placeholder="name@example.com">
   <label for="floatingInput">Email address</label>
 </div>
 
 <div class="form-floating">
-  <textarea class="form-control" name="message" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+  <textarea class="form-control" name="message" placeholder="Leave a comment here" id="floatingTextarea2" required style="height: 100px"></textarea>
   <label for="floatingTextarea2">Comments</label>
 </div>
 
-  <button type="submit" class="btn btn-primary mb-3">Submit</button>
+  <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-paper-plane"></i> Send</button>
 </form>
 	</div>
 </body>
