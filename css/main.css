@@ -112,14 +112,11 @@
   color: crimson;
   background: none;
 }
-/*about section styling*/
+/* all similar content styling  */
 section {
   padding: 100px 0;
 }
-.about {
-  font-family: "Poppins", sans-serif;
-}
-.about .title {
+section .title {
   position: relative;
   text-align: center;
   font-size: 40px;
@@ -128,7 +125,7 @@ section {
   padding-bottom: 20px;
   font-family: "Ubuntu", sans-serif;
 }
-.about .title::before {
+section .title::before {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -138,8 +135,7 @@ section {
   background: #111;
   transform: translateX(-50%);
 }
-.about .title::after {
-  content: "who i am";
+section .title::after {
   position: absolute;
   bottom: -12px;
   left: 50%;
@@ -149,7 +145,15 @@ section {
   background: #fff;
   transform: translateX(-50%);
 }
-.about .about-content {
+/*about section styling*/
+.about .services {
+  font-family: "Poppins", sans-serif;
+}
+.about .title::after {
+  content: "who i am";
+}
+.about .about-content,
+.services .serv-content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -193,6 +197,50 @@ section {
 .about .about-content .right a:hover {
   color: crimson;
   background: none;
+}
+/* services section styling */
+.services {
+  color: #fff;
+  background: #111;
+}
+.services .title::before {
+  background: #fff;
+}
+.services .title::after {
+  background: #111;
+  content: "what i provide";
+}
+.services .serv-content .card {
+  width: calc(33% - 20px);
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.services .serv-content .card:hover {
+  background: crimson;
+}
+.services .serv-content .card .box {
+  transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box {
+  transform: scale(1.05);
+}
+.services .serv-content .card span {
+  font-size: 50px;
+  color: crimson;
+  transition: color 0.3s ease;
+
+}
+.services .serv-content .card:hover span {
+  color: #fff;
+}
+.services .serv-content .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
 }
 
 /*responsive media query*/
@@ -261,11 +309,15 @@ section {
   }
   .about .about-content .left {
     display: flex;
-	justify-content: center;
-	margin: 0 auto 60px;
+    justify-content: center;
+    margin: 0 auto 60px;
   }
   .about .about-content .right {
-	  flex: 100%;
+    flex: 100%;
+  }
+  .services .serv-content .card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 690px) {
@@ -282,6 +334,9 @@ section {
   .home .home-content a {
     font-size: 20px;
   }
+  .services .serv-content .card {
+    width: 100%;
+  }
 }
 @media (max-width: 500px) {
   .home .home-content .text-2 {
@@ -291,7 +346,7 @@ section {
     font-size: 27px;
   }
 }
-
+/* 
 .contact-form {
   max-width: 450px;
   margin: 20px auto;
@@ -301,4 +356,4 @@ section {
 .contact-form input,
 .contact-form textarea {
   margin-bottom: 5px;
-}
+} */
