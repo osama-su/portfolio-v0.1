@@ -39,7 +39,14 @@ function isInjected($str) {
 	}
 }
 	$headers = 'From: '. $mail . 'r\n';
-	mail($webmaster_email, 'Feedback', $msg,$headers);
+	if(mail($webmaster_email, 'Feedback', $msg,$headers)){
+		echo "<p>Thank you for contacting us, $name. You will get a reply within 24 hours.</p>";
+    } else {
+        echo '<p>We are sorry but the email did not go through.</p>';
+    }
+    else {
+    echo '<p>Something went wrong</p>';
+	}
 
 
  ?>
